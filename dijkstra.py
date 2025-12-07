@@ -9,7 +9,7 @@ dij_time = 0
 court_chemin = []
 
 color = 'red'
-button = tk.Button(config.affichage, text="Resolution Dijkstra", command=lambda : dijkstra(), state='disabled', width=config.btn_size,
+button = tk.Button(config.frame, text="Resolution Dijkstra", command=lambda : dijkstra(), state='disabled', width=config.btn_size,
                    bd=1, relief='solid')
 def dijkstra():
 
@@ -66,15 +66,15 @@ def dijkstra():
     while (court_chemin[0] != sommet_depart and [chemins[court_chemin[0]][1]] != None):
         court_chemin = [chemins[court_chemin[0]][1]] + court_chemin
 
-    # Maj Affichage plateau
+    # Maj frame plateau
     for l, c in court_chemin:
         if (l, c) in config.libres:
             time.sleep(0.05)
             config.plateau[l][c] = 3
 
-        # Met à jour l'affichage
+        # Met à jour l'frame
         config.draw_plateau(config.plateau)
-        config.affichage.update() # met à jour l'affichage chaque frame
+        config.frame.update() # met à jour l'frame chaque frame
 
     # temps de résolution
     end_time = time.perf_counter()

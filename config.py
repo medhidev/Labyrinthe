@@ -1,10 +1,10 @@
 import tkinter as tk
 
 # ----------------- CONFIGURATION DU LABYRINTHE -----------------
-WIDTH = 17 # Largeur du plateau
-HEIGHT = 17  # Hauteur du plateau
+WIDTH = 31 # Largeur du plateau
+HEIGHT = 31  # Hauteur du plateau
 PROBA = 0.02 # remplissage de 2%
-DIM_CASE = 20 # dimension des cases
+DIM_CASE = 15 # dimension des cases
 TP = 0 # nombre de paire de case de teleportation
 PASTILLE = 0 # nombre de pastille
 
@@ -35,14 +35,17 @@ teleport = []
 pastille = []
 
 # Fenêtre
-affichage = tk.Tk()
-affichage.title("Labyrinthe")
+frame = tk.Tk()
+frame.geometry("700x500")
+frame.resizable(width=False, height=False)
+frame.title("Labyrinthe")
+frame.configure(background='#111721')
 icon = tk.PhotoImage(file = 'image/icon.png') 
-affichage.iconphoto(False, icon)
+frame.iconphoto(False, icon)
 btn_size = 20
 
-canvas = tk.Canvas(affichage, width=WIDTH * DIM_CASE, height=HEIGHT * DIM_CASE)
-canvas.pack()
+canvas = tk.Canvas(frame, width=WIDTH * DIM_CASE, height=HEIGHT * DIM_CASE)
+canvas.pack(side='left')
 
 # ----------------- METHODES RESOLUTION / CONSTRUCTION LABYRINTHE -----------------
 
@@ -101,11 +104,11 @@ def draw_plateau(plateau):
             match (plateau[l][c]):
                 # CASE LIBRE
                 case 0:
-                    color = 'white'
+                    color = '#2a4166'
 
                 # MUR
                 case 1:
-                    color = 'black'
+                    color = '#0e1624'
 
                 # DFS
                 case 2:

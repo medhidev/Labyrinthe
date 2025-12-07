@@ -7,7 +7,7 @@ blinky_time = 0
 chemin_court = []
 
 color = 'green'
-button = tk.Button(config.affichage, text="Resolution Blinky", command=lambda: blinky(), state='disabled', width=config.btn_size, bd=1, relief='solid')
+button = tk.Button(config.frame, text="Resolution Blinky", command=lambda: blinky(), state='disabled', width=config.btn_size, bd=1, relief='solid')
 
 def blinky():
 
@@ -65,13 +65,13 @@ def blinky():
         while chemin[0] != depart:
             chemin.insert(0, predecesseurs[chemin[0]])
         
-        # Affichage progressif du chemin
+        # frame progressif du chemin
         for x, y in chemin:
             if (x, y) in config.libres:
                 plateau[x][y] = 4
                 chemin_court.append((x, y))
                 config.draw_plateau(plateau)
-                config.affichage.update()
+                config.frame.update()
                 time.sleep(0.05)
     else:
         print("Aucun chemin trouvé")

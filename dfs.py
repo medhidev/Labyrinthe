@@ -8,7 +8,7 @@ dfs_time = 0
 court_chemin = []
 
 color = 'blue'
-button = tk.Button(config.affichage, text="Resolution DFS", command=lambda : dfs(), state='disabled', width=config.btn_size, bd=1, relief='solid')
+button = tk.Button(config.frame, text="Resolution DFS", command=lambda : dfs(), state='disabled', width=config.btn_size, bd=1, relief='solid')
 
 def dfs():
     global dfs_time
@@ -62,9 +62,9 @@ def dfs():
         if (x, y) == sommet_arrivee:
             plateau[x][y] = 2
 
-        # Met à jour l'affichage
+        # Met à jour l'frame
         config.draw_plateau(plateau)
-        config.affichage.update()
+        config.frame.update()
         time.sleep(0.05)
 
     if len(pile) == 0:

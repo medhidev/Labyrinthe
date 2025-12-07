@@ -8,7 +8,7 @@ import blinky
 import manual
 
 color = 'black'
-button = tk.Button(config.affichage, text="Générer un Labyrinthe", command=lambda : generer_labyrinthe(), width=config.btn_size, 
+button = tk.Button(config.frame, text="Générer un Labyrinthe", command=lambda : generer_labyrinthe(), width=config.btn_size, 
                    bd=1, relief='solid')
 generer = False
 
@@ -78,7 +78,7 @@ def generer_labyrinthe():
                 l = pile[len(pile) - 1][0]
                 c = pile[len(pile) - 1][1]
 
-        config.affichage.update()
+        config.frame.update()
 
     # Case 0 et 1
     for lm in range(len(plateau)):
@@ -141,7 +141,7 @@ def generer_labyrinthe():
     config.libres = libres
     config.teleport = teleport
 
-    # Affichage → colorie la matrice
+    # frame → colorie la matrice
     config.draw_plateau(plateau)
 
     generer = True

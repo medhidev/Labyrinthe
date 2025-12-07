@@ -61,7 +61,7 @@ def move(event, plateau):
 
 
 color = 'orange'
-button = tk.Button(config.affichage, text="Resolution Joueur", state='disabled', width=config.btn_size, 
+button = tk.Button(config.frame, text="Resolution Joueur", state='disabled', width=config.btn_size, 
                    bd=1, relief='solid', command=lambda : deplacement())
 
 def deplacement():
@@ -72,6 +72,6 @@ def deplacement():
     plateau = config.empty_lab()
     plateau[config.DEPART[0]][config.DEPART[1]] = 5 # colorié au départ la première case
     
-    config.affichage.bind("<Key>", lambda event : move(event, plateau))
-    config.draw_plateau(plateau) # affichage case de départ
+    config.frame.bind("<Key>", lambda event : move(event, plateau))
+    config.draw_plateau(plateau) # frame case de départ
     

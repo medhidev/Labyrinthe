@@ -19,4 +19,4 @@ manual.button.pack(ipady=4, pady=5)        # Joueur
 comparaison.button.pack(ipady=4, pady=5)   # Comparaison
 
 # Lancer la boucle principale de l'application 
-config.affichage.mainloop() # permet de garder la fenêtre ouverte en attendant les interactions de l'utilisateur.
+config.frame.mainloop() # permet de garder la fenêtre ouverte en attendant les interactions de l'utilisateur.

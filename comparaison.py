@@ -8,7 +8,7 @@ import blinky
 import config
 
 color = 'gray'
-button = tk.Button(config.affichage, text="Comparaison Algo", command=lambda : compare(), width=config.btn_size, bd=1, relief='solid')
+button = tk.Button(config.frame, text="Comparaison Algo", command=lambda : compare(), width=config.btn_size, bd=1, relief='solid')
 
 def compare():
 
